@@ -1,0 +1,57 @@
+{
+  "name": "@capturekitdev/cli",
+  "version": "0.1.0",
+  "description": "Official command-line interface for the CaptureKit screenshot API.",
+  "type": "module",
+  "bin": {
+    "capturekit": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "SECURITY.md"
+  ],
+  "scripts": {
+    "build": "npm run clean && tsc -p tsconfig.build.json",
+    "clean": "node -e \"require('node:fs').rmSync('dist', { force: true, recursive: true })\"",
+    "format:check": "prettier --check .",
+    "prepack": "npm run build",
+    "test": "tsx --test test/*.test.ts",
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "author": "CaptureKit",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/capturekitdev/capturekit-cli.git"
+  },
+  "homepage": "https://github.com/capturekitdev/capturekit-cli#readme",
+  "bugs": {
+    "url": "https://github.com/capturekitdev/capturekit-cli/issues"
+  },
+  "keywords": [
+    "cli",
+    "command-line",
+    "capturekit",
+    "screenshot-api",
+    "website-screenshot",
+    "url-to-pdf",
+    "web-content"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@capturekitdev/sdk": "^0.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "prettier": "^3.4.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}
